@@ -1,7 +1,7 @@
 // import React, { useEffect, useState } from 'react'
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import HookFetch from '../Scratch/Hookfetch';
+// import HookFetch from '../Scratch/Hookfetch';
 import ClassAsync from '../FetchClassAsync';
 
 

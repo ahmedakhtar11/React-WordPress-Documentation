@@ -3,16 +3,8 @@ import React, { useEffect, useState } from 'react'
 const HookFetch = (props) => {
   const [data, setData] = useState([])
   const [error, hasError] = useState(false)
-  let [showResults, setShowResults] = React.useState(true)
-
   const fetchURL = "http://eventsensei.com/wp-json/wp/v2/posts"
 
-
-  const onClick = () => setShowResults
-  (
-    prevCheck => !prevCheck
-    // !showResults
-  )
 
 
     const getWp = () => {

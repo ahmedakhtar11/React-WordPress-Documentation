@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components'
-import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
+import {withRouter } from "react-router-dom";
 // import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 import {Link} from 'react-scroll'
 
@@ -54,7 +54,7 @@ class SideNav extends React.Component {
     }
 
     render() {
-        const { items, activePath } = this.state;
+        // const { items, activePath } = this.state;
         return(
             <StyledSideNav>
           <h5 style ={LinkTitleStyle}>Documentation</h5>      
@@ -90,25 +90,24 @@ const LinkStyle = {
     justifyContent: "center",
     textShadow: "2px 1px black",
     listStyle: 'none',
-    justifyContent: 'space-around',
   }
 
 
 
-const StyledNavItem = styled.div`
-    height: 70px;
-    width: 75px; /* width must be same size as NavBar to center */
-    text-align: center; /* Aligns <a> inside of NavIcon div */
-    margin-bottom: 0;   /* Puts space between NavItems */
-    a {
-        font-size: 2.7em;
-        color: ${(props) => props.active ? "white" : "#9FFFCB"};
-        :hover {
-            opacity: 0.7;
-            text-decoration: none; /* Gets rid of underlining of icons */
-        }  
-    }
-`;
+// const StyledNavItem = styled.div`
+//     height: 70px;
+//     width: 75px; /* width must be same size as NavBar to center */
+//     text-align: center; /* Aligns <a> inside of NavIcon div */
+//     margin-bottom: 0;   /* Puts space between NavItems */
+//     a {
+//         font-size: 2.7em;
+//         color: ${(props) => props.active ? "white" : "#9FFFCB"};
+//         :hover {
+//             opacity: 0.7;
+//             text-decoration: none; /* Gets rid of underlining of icons */
+//         }  
+//     }
+// `;
 
 
 export default class Sidebar extends React.Component {

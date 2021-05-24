@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import SearchBox from './Scratch/SearchBox';
+// import SearchBox from './Scratch/SearchBox';
 
-class ClassyAsync extends Component {
+class ClassAsync extends Component {
   constructor() {
     super();
     this.state = { 
@@ -41,7 +41,7 @@ class ClassyAsync extends Component {
   }
 }
 
-export default ClassyAsync;
+export default ClassAsync;
 
 const titles = {
   display: "flex",
