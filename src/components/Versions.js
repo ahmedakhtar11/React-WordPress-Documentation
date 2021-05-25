@@ -25,7 +25,7 @@ class Versions extends Component{
             <Button onClick={this.toggleNavbar}>Version
             <Collapse isOpen={this.state.isOpen} navbar className="collapse">
               <Nav>
-                <NavItem><LinkContainer to="/"><NavLink>Version1</NavLink></LinkContainer></NavItem>
+                <NavItem><LinkContainer to="/documentation"><NavLink>Version1</NavLink></LinkContainer></NavItem>
                 <NavItem><LinkContainer to="/version2"><NavLink>Version2</NavLink></LinkContainer></NavItem>                  
               </Nav>
             </Collapse>

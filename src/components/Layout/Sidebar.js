@@ -25,36 +25,11 @@ class SideNav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            activePath: props.location.pathname,
-            items: [
-                {
-                  path: '/', /* path is used as id to check which NavItem is active basically */
-                  name: 'meShare Installation',
-                  css: 'fa fa-fw fa-home',
-                  key: 1 /* Key is required, else console throws error. Does this please you Mr. Browser?! */
-                },
-                {
-                  path: '/about',
-                  name: 'meShare Integration',
-                  css: 'fa fa-fw fa-clock',
-                  key: 2
-                },
-                {
-                  path: '/Getting Started',
-                  name: 'Getting Started',
-                  css: 'fas fa-hashtag',
-                  key: 3
-                },
-              ]
+            
         }
     }
 
-    onItemClick = (path) => {
-        this.setState({ activePath: path });
-    }
-
     render() {
-        // const { items, activePath } = this.state;
         return(
             <StyledSideNav>
           <h5 style ={LinkTitleStyle}>Documentation</h5>      
@@ -91,24 +66,6 @@ const LinkStyle = {
     textShadow: "2px 1px black",
     listStyle: 'none',
   }
-
-
-
-// const StyledNavItem = styled.div`
-//     height: 70px;
-//     width: 75px; /* width must be same size as NavBar to center */
-//     text-align: center; /* Aligns <a> inside of NavIcon div */
-//     margin-bottom: 0;   /* Puts space between NavItems */
-//     a {
-//         font-size: 2.7em;
-//         color: ${(props) => props.active ? "white" : "#9FFFCB"};
-//         :hover {
-//             opacity: 0.7;
-//             text-decoration: none; /* Gets rid of underlining of icons */
-//         }  
-//     }
-// `;
-
 
 export default class Sidebar extends React.Component {
     render() {

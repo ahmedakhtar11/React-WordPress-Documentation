@@ -25,8 +25,6 @@ class ClassAsync extends Component {
   }
 
   render() {
-
-
     return (
       <div>
           {/* <SearchBox datar={this.props.datar} searchPosts={this.state.searchPosts} handleInput={this.handleinput} /> */}

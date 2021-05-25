@@ -1,9 +1,9 @@
-// import React, { useEffect, useState } from 'react'
 import React, { Component } from 'react'
 import styled from 'styled-components';
 // import HookFetch from '../Scratch/Hookfetch';
 import ClassAsync from '../FetchClassAsync';
-
+import { NavigationBar } from '../Layout/NavigationBar';
+import Sidebar from '../Layout/Sidebar';
 
 const GridWrapper = styled.div`
   display: grid;
@@ -38,6 +38,8 @@ export class Version2 extends Component {
 
   return(
     <div>
+  <NavigationBar/>
+  <Sidebar/>
   <GridWrapper>
     {/* <HookFetch datar = {this.state.datar}/> */}
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Nav, Navbar} from 'react-bootstrap';
 import styled from 'styled-components';
-import Versions from './Versions';
-import Languages from './Languages';
+import Versions from '../Versions';
+import Languages from '../Languages';
 
 const Styles = styled.div`
   .navbar { background-color: #D76C78; }

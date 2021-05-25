@@ -1,9 +1,8 @@
-// import React, { useEffect, useState } from 'react'
 import React, { Component } from 'react'
 import styled from 'styled-components';
-// import HookFetch from '../Scratch/Hookfetch';
 import ClassAsync from '../FetchClassAsync';
-
+import { NavigationBar } from '../Layout/NavigationBar';
+import Sidebar from '../Layout/Sidebar';
 
 const GridWrapper = styled.div`
   display: grid;
@@ -38,23 +37,14 @@ export class Home extends Component {
 
   return(
     <div>
-  <GridWrapper>
-    {/* <HookFetch datar = {this.state.datar}/> */}
-
-  <ClassAsync datar = {this.state.datar}/>
-  </GridWrapper>
-  
-</div>
-)
+      <NavigationBar/>
+      <Sidebar/>
+      <GridWrapper>
+      {/* <HookFetch datar = {this.state.datar}/> */}
+      <ClassAsync datar = {this.state.datar}/>
+      </GridWrapper>
+      
+    </div>
+    )
   }
 }
-
-// const GridWrapper = styled.div`
-//   display: grid;
-//   grid-gap: 10px;
-//   margin-top: 1em;
-//   margin-left: 15em;
-//   margin-right: 6em;
-//   grid-template-columns: repeat(12, 1fr);
-//   grid-auto-rows: minmax(25px, auto);
-// `;

@@ -12,7 +12,6 @@ class Versions extends Component{
         };
     }
 
-
     toggleNavbar() {
         this.setState({
             isOpen: !this.state.isOpen
@@ -25,7 +24,7 @@ class Versions extends Component{
             <Button onClick={this.toggleNavbar}>Language
             <Collapse isOpen={this.state.isOpen} navbar className="collapse">
               <Nav>
-                <NavItem><LinkContainer to="/"><NavLink>English</NavLink></LinkContainer></NavItem>
+                <NavItem><LinkContainer to="/documentation"><NavLink>English</NavLink></LinkContainer></NavItem>
                 <NavItem><LinkContainer to="/chinese"><NavLink>Chinese</NavLink></LinkContainer></NavItem>                  
               </Nav>
             </Collapse>
