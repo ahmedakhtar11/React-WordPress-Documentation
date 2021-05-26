@@ -1,7 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components'
-import {withRouter } from "react-router-dom";
-// import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 import {Link} from 'react-scroll'
 
 const StyledSideNav = styled.div`   
@@ -20,32 +18,26 @@ const StyledSideNav = styled.div`
             }
         `}`;
 
-
-class SideNav extends React.Component {
-    constructor(props) {
+        export default class SideNav extends React.Component {
+        constructor(props) {
         super(props);
         this.state = {
-            
         }
     }
 
     render() {
         return(
             <StyledSideNav>
-          <h5 style ={LinkTitleStyle}>Documentation</h5>      
-          <ul style={LinkStyle}>
-          <li ><Link activeClass="active" to="meshare-warranty" spy={true} smooth={true}>meShare Warranty</Link></li>
-          <li><Link  to="meshare-integration" spy={true} smooth={true}>meShare Integration</Link></li>
-          <li><Link  to="getting-started" spy={true} smooth={true}>Getting Started</Link></li>
-          <li><Link  to="meshare-installation" spy={true} smooth={true}>MeShare Installation</Link></li>
-            </ul>
-
+           <h5 style ={LinkTitleStyle}>Documentation</h5>     
+          {this.props.data.map(el => (
+           <ul style={LinkStyle}>
+           <li ><Link activeClass="active" to={el.slug} spy={true} smooth={true}>{el.title.rendered}</Link></li>
+             </ul>
+          ))}
             </StyledSideNav>
         );
     }
 }
-
-const RouterSideNav = withRouter(SideNav);
 
 const LinkTitleStyle = {
     color: 'white',
@@ -67,10 +59,4 @@ const LinkStyle = {
     listStyle: 'none',
   }
 
-export default class Sidebar extends React.Component {
-    render() {
-        return (
-            <RouterSideNav></RouterSideNav>
-        );
-    }
-}
+

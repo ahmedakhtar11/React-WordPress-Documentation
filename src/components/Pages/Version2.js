@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-// import HookFetch from '../Scratch/Hookfetch';
 import ClassAsync from '../FetchClassAsync';
 import { NavigationBar } from '../Layout/NavigationBar';
-import Sidebar from '../Layout/Sidebar';
+import SideNav from '../Layout/Sidebar';
 
 const GridWrapper = styled.div`
   display: grid;
@@ -19,31 +18,28 @@ export class Version2 extends Component {
   constructor() {
     super();
     this.state = { 
-        datar: [],
-        filteredPosts: [],
-        term: '',
+        data: [],
     };
   }
 
   async componentDidMount() {
-    const wpdata = await fetch(`http://mortalacademy.org/wp-json/wp/v2/posts`);
+    const wpdata = await fetch(`http://moneypowerdictionary.com/wp-json/wp/v2/posts/?per_page=100`);
     const jsonresp = await wpdata.json()
-    this.setState({ datar: jsonresp });
-    console.log("WordPress Data Fetched from home")
-    console.log(jsonresp);
+    const postsversion2 = jsonresp.filter(function(item){
+        return item.categories == 4;         
+    });
+    this.setState({ data: postsversion2 });
+  
   }
 
+
   render(){
-
-
   return(
     <div>
   <NavigationBar/>
-  <Sidebar/>
+  <SideNav data = {this.state.data}/>
   <GridWrapper>
-    {/* <HookFetch datar = {this.state.datar}/> */}
-
-  <ClassAsync datar = {this.state.datar}/>
+  <ClassAsync data = {this.state.data}/>
   </GridWrapper>
   
 </div>

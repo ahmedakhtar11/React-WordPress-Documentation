@@ -7,10 +7,26 @@ export class Landing extends Component {
   constructor() {
     super();
     this.state = { 
+        title: [],
+        description: [],
+        slug: []
     };
   }
 
+  async componentDidMount() {
+    const wpdata = await fetch(`http://moneypowerdictionary.com/wp-json/wp/v2/posts/?per_page=100`);
+    const jsonresp = await wpdata.json()
+    const postsversion1 = jsonresp.filter(function(item){
+        return item.categories == "6";         
+    });
+    this.setState({ title: postsversion1[0].title.rendered });
+    this.setState({ description: postsversion1[0].content.rendered });
+    this.setState({ slug: postsversion1[0].slug });
+  }
+  
+
   render(){
+
 
     return(
         <div >
@@ -22,12 +38,10 @@ export class Landing extends Component {
              <Button variant="dark" size="lg"><a style={{color: "white"}}href="/documentation">View Documentation</a></Button>{' '}
             </div>
             <div id="descriptionTitleStyle" style = {descriptionTitleStyle}>
-                <p>Reliable Documentation to meet your needs.</p>     
+                <p>{this.state.title}</p>     
             </div>
             <div id="descriptionStyle" style = {descriptionStyle}>
-                <p>meShare offers multiple web and mobile App development options to ensure your business can launch quickly and efficiently. Users can control multiple devices from one central cloud-based platform.
-                   Already have your App prepared? Want to build your own? meShare’s robust SDK and API documentation and developer assistance enable your team to rapidly integrate features and functionality.
-                   Provide your users web-based controls for your devices from any browser with your custom-branded solution. Use your own domain or quickly launch with a branded subdomain on meShare’s URL.</p>     
+            <p id={this.state.slug} dangerouslySetInnerHTML={{__html: this.state.description}}></p>
             </div>
         </div>
     )
